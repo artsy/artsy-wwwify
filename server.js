@@ -1,6 +1,12 @@
 var express = require('express');
 var https = require('https');
 var http = require('http');
+var path = require('path');
+var fs = require('fs');
+var options = {
+  key: fs.readFileSync(path.resolve(__dirname, '../shared/config/ssl.key')),
+  cert: fs.readFileSync(path.resolve(__dirname, '../shared/config/ssl.crt'))
+};
 var app = express();
 app.use(function(req, res, next) {
   res.setHeader('Strict-Transport-Security', 'max-age=0');
