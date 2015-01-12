@@ -10,6 +10,6 @@ app.use(function(req, res, next) {
 });
 http.createServer(app).listen(80);
 https.createServer({
-  key: fs.readFileSync(process.cwd() + '/shared/config/ssl.key'),
-  cert: fs.readFileSync(process.cwd() + '/shared/config/ssl.crt')
+  key: fs.readFileSync('/srv/www/artsy_wwwify/shared/config/ssl.key'),
+  cert: fs.readFileSync('/srv/www/artsy_wwwify/shared/config/ssl.crt')
 }, app).listen(443);
