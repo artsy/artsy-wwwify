@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/artsy/artsy-wwwify/issues"
   },
-  "homepage": "https://github.com/artsy/artsy-wwwify",
-  "dependencies": {
-    "express": "4.10.7"
-  }
+  "homepage": "https://github.com/artsy/artsy-wwwify"
 }
