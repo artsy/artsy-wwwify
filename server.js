@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-app.set('port', 80);
+app.set('port', process.env.PORT || 80);
 app.use(function(req, res, next) {
   res.setHeader('Strict-Transport-Security', 'max-age=0');
   res.redirect(301, 'https://www.artsy.net' + req.url);
