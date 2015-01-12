@@ -6,5 +6,5 @@ app.use(function(req, res, next) {
   res.redirect(301, 'https://www.artsy.net' + req.url);
 });
 app.listen(port, function() {
-	console.log("Listening on " + port);
+  console.log("Listening on " + port);
 });
