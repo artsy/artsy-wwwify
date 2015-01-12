@@ -9,8 +9,7 @@ app.use(function(req, res, next) {
   res.redirect(301, 'https://www.artsy.net' + req.url);
 });
 http.createServer(app).listen(80);
-return
 https.createServer({
-  key: fs.readFileSync(__dirname + '/shared/config/ssl.key'),
-  cert: fs.readFileSync(__dirname + '/shared/config/ssl.crt')
+  key: fs.readFileSync(process.cwd() + '/shared/config/ssl.key'),
+  cert: fs.readFileSync(process.cwd() + '/shared/config/ssl.crt')
 }, app).listen(443);
