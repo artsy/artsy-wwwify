@@ -1,10 +1,10 @@
 var express = require('express');
+var https = require('https');
+var http = require('http');
 var app = express();
-app.set('port', process.env.PORT || 80);
 app.use(function(req, res, next) {
   res.setHeader('Strict-Transport-Security', 'max-age=0');
   res.redirect(301, 'https://www.artsy.net' + req.url);
 });
-app.listen(app.get('port'), function() {
-  console.log("Listening on " + app.get('port'));
-});
+http.createServer(app).listen(80);
+https.createServer(options, app).listen(443);
