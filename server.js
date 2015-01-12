@@ -5,7 +5,7 @@ var path = require('path');
 var fs = require('fs');
 var app = express();
 app.use(function(req, res, next) {
-  res.setHeader('Strict-Transport-Security', 'max-age=0');
+  res.set('Strict-Transport-Security', 'max-age=0');
   res.redirect(301, 'https://www.artsy.net' + req.url);
 });
 http.createServer(app).listen(80);
