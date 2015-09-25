@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/artsy/artsy-wwwify/issues"
   },
-  "homepage": "https://github.com/artsy/artsy-wwwify"
+  "homepage": "https://github.com/artsy/artsy-wwwify",
+  "dependencies": {
+    "artsy-eigen-web-association": "git://github.com/artsy/artsy-eigen-web-association.git"
+  }
 }
