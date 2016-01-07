@@ -2,9 +2,11 @@ var artsyEigenWebAssociation = require('artsy-eigen-web-association');
 var express = require('express');
 var https = require('https');
 var http = require('http');
+var morgan = require('morgan');
 var path = require('path');
 var fs = require('fs');
 var app = express();
+app.use(morgan('combined'));
 app.use('/apple-app-site-association', artsyEigenWebAssociation);
 app.use(function(req, res, next) {
   res.setHeader('Strict-Transport-Security', 'max-age=0');
