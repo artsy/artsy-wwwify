@@ -1,0 +1,8 @@
+---
+version: '2'
+services:
+  artsy-wwwify:
+    command: ["npm", "test"]
+    extends:
+      file: build.yml
+      service: artsy-wwwify
