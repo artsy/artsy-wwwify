@@ -4,9 +4,8 @@
   "description": "A tiny app that 301 redirects requests to www.artsy.net",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "dev": "NODE_ENV=development node server.js"
+    "test": "jest",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +20,15 @@
   "dependencies": {
     "artsy-eigen-web-association": "git://github.com/artsy/artsy-eigen-web-association.git",
     "morgan": "^1.6.1"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "supertest": "^4.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }
