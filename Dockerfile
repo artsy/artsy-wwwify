@@ -18,10 +18,10 @@ ENV USER deploy
 ENV HOME /home/deploy
 
 # Set up node_modules
-RUN npm install
+RUN yarn install
 
 ENV PORT 3000
 EXPOSE 3000
 
 ENTRYPOINT ["/usr/bin/dumb-init", "--"]
-CMD ["npm", "start"]
+CMD ["yarn", "start"]
