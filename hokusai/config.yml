@@ -1,2 +1,4 @@
 ---
 project-name: artsy-wwwify
+git-remote: git@github.com:artsy/artsy-wwwify.git
+hokusai-required-version: "~=0.5"
