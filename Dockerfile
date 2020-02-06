@@ -1,11 +1,13 @@
-FROM node:8.16.2
+FROM node:12-alpine
 
 # Set up deploy user and working directory
 RUN adduser --disabled-password --gecos '' deploy
 RUN mkdir -p /app
 
 # Set up dumb-init
-RUN apt-get update -qq && apt-get install -y dumb-init
+RUN apk --no-cache --quiet add \
+    git \
+    dumb-init
 
 # Set up /app for deploy user
 ADD . /app
