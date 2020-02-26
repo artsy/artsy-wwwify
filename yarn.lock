@@ -487,7 +487,7 @@ array-unique@^0.3.2:
 
 "artsy-eigen-web-association@git://github.com/artsy/artsy-eigen-web-association.git":
   version "1.0.7"
-  resolved "git://github.com/artsy/artsy-eigen-web-association.git#b8fc6cce6e75144825abf7c0eb3b40e4b53e0cc8"
+  resolved "git://github.com/artsy/artsy-eigen-web-association.git#0d28dc247b6a1366fabe0b95f365a61b95261c1e"
   dependencies:
     express "*"
 
