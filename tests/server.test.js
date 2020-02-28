@@ -21,7 +21,7 @@ describe('artsy-wwwify', () => {
   it('serves Apple sign in verification file at /.well-known/...', async () => {
     const res = await request(app).get('/.well-known/apple-developer-domain-association.txt');
     expect(res.statusCode).toEqual(200);
-    expect(res.text).toContain('MIIP2gYJKoZIhvcNAQ');
+    expect(res.text).toContain('MIIP1gYJKoZIhvcNAQ');
   });
 
   it('redirects other requests', async () => {

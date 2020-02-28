@@ -1,6 +1,6 @@
 var path = require('path');
 var artsyEigenWebAssociation = require('artsy-eigen-web-association');
-var verificationFileName = path.resolve(__dirname, 'apple-developer-web-association.txt');
+var verificationFileName = path.resolve(__dirname, 'apple-developer-domain-association.txt');
 var options = { 'headers': { 'Content-Type': 'text/plain' } };
 
 var express = require('express');
