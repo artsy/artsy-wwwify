@@ -18,6 +18,12 @@ describe('artsy-wwwify', () => {
     expect(res.text).toContain('23KMWZ572J.net.artsy.artsy');
   });
 
+  it('serves Apple sign in verification file at /.well-known/...', async () => {
+    const res = await request(app).get('/.well-known/apple-developer-domain-association.txt');
+    expect(res.statusCode).toEqual(200);
+    expect(res.text).toContain('MIIP2gYJKoZIhvcNAQ');
+  });
+
   it('redirects other requests', async () => {
     const res = await request(app).get('/artist/yayoi-kusama');
     expect(res.statusCode).toEqual(301);
