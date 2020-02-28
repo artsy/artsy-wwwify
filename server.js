@@ -1,12 +1,27 @@
+var path = require('path');
 var artsyEigenWebAssociation = require('artsy-eigen-web-association');
+var verificationFileName = path.resolve(__dirname, 'apple-developer-web-association.txt');
+var options = { 'headers': { 'Content-Type': 'text/plain' } };
+
 var express = require('express');
 var http = require('http');
 var morgan = require('morgan');
 var app = express();
 app.use(morgan('combined'));
 app.use('/(.well-known/)?apple-app-site-association', artsyEigenWebAssociation);
+
+app.get('/.well-known/apple-developer-domain-association.txt', function (req, res) {
+  res.sendFile(verificationFileName, options, function (error) {
+    if (error) {
+      console.log(error);
+      code = error.status >= 100 && error.status < 600 ? error.status : 500
+      response.status(code).end();
+    }
+  })
+})
+
 app.get('/ping', function (req, res) { res.send('pong'); });
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.setHeader('Strict-Transport-Security', 'max-age=0');
   res.redirect(301, 'https://www.artsy.net' + req.url);
 });
