@@ -1,4 +1,6 @@
 ---
 project-name: artsy-wwwify
 git-remote: git@github.com:artsy/artsy-wwwify.git
-hokusai-required-version: "~=0.5"
+hokusai-required-version: ">=0.5.8"
+template-config-files:
+  - s3://artsy-citadel/k8s/hokusai-vars.yml
