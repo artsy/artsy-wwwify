@@ -20,7 +20,7 @@ ENV USER deploy
 ENV HOME /home/deploy
 
 # Set up node_modules
-RUN yarn install
+RUN yarn install --frozen-lockfile && yarn cache clean
 
 ENV PORT 3000
 EXPOSE 3000
