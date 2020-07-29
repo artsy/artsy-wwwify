@@ -79,44 +79,6 @@ metadata:
     app: artsy-wwwify
     component: web
     layer: application
-  name: artsy-wwwify-web
-  namespace: default
-  annotations:
-    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: {{ artsyNetWildcardSSLCert }}
-    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: "http"
-    service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "443"
-    service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: "true"
-    service.beta.kubernetes.io/aws-load-balancer-connection-draining-enabled: "true"
-    service.beta.kubernetes.io/aws-load-balancer-connection-idle-timeout: "5"
-spec:
-  ports:
-    - port: 80
-      protocol: TCP
-      name: http
-      targetPort: wwwify-http
-    - port: 443
-      protocol: TCP
-      name: https
-      targetPort: wwwify-http
-  selector:
-    app: artsy-wwwify
-    layer: application
-    component: web
-  sessionAffinity: None
-  type: LoadBalancer
-  loadBalancerSourceRanges:
-{%- for cidr_block in cloudflareIpSourceRanges %}
-    - {{ cidr_block }}
-{%- endfor %}
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    app: artsy-wwwify
-    component: web
-    layer: application
   name: artsy-wwwify-web-internal
   namespace: default
 spec:
