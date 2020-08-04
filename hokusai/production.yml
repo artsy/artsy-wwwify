@@ -109,4 +109,17 @@ spec:
             backend:
               serviceName: artsy-wwwify-web-internal
               servicePort: http
-
+    - host: m.artsy.net
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: artsy-wwwify-web-internal
+              servicePort: http
+    - host: ascii.artsy.net
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: artsy-wwwify-web-internal
+              servicePort: http
