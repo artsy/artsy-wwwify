@@ -2,8 +2,6 @@
 version: '2'
 services:
   artsy-wwwify:
-    extends:
-      file: build.yml
-      service: artsy-wwwify
+{% include 'templates/docker-compose-service.yml.j2' %}
     ports:
       - 3000:3000
