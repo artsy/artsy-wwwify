@@ -1,15 +1,24 @@
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: artsy-wwwify-web
   namespace: default
+  labels:
+    app: artsy-wwwify
+    component: web
+    layer: application
 spec:
   strategy:
     rollingUpdate:
       maxSurge: 1
       maxUnavailable: 0
     type: RollingUpdate
+  selector:
+    matchLabels:
+      app: artsy-wwwify
+      component: web
+      layer: application
   template:
     metadata:
       labels:
@@ -64,7 +73,7 @@ metadata:
   namespace: default
 spec:
   scaleTargetRef:
-    apiVersion: extensions/v1beta1
+    apiVersion: apps/v1
     kind: Deployment
     name: artsy-wwwify-web
   minReplicas: 1
@@ -94,18 +103,20 @@ spec:
   type: ClusterIP
 
 ---
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: artsy-wwwify
   annotations:
     nginx.ingress.kubernetes.io/whitelist-source-range: "{{ cloudflareIpSourceRanges|join(',') }}"
 spec:
+  ingressClassName: nginx
   rules:
     - host: artsy-wwwify.artsy.net
       http:
         paths:
           - path: /
+            pathType: Prefix
             backend:
               serviceName: artsy-wwwify-web-internal
               servicePort: http
