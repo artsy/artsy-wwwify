@@ -35,4 +35,12 @@ describe('artsy-wwwify', () => {
     expect(res.statusCode).toEqual(301);
     expect(res.headers).toHaveProperty('location', 'https://www.artsy.net/artist/yayoi-kusama?utm-campaign=yolo');
   });
+
+  it('serves Android assetlinks file at root', async () => {
+    const res = await request(app).get('/.well-known/assetlinks.json');
+    expect(res.statusCode).toEqual(200);
+    expect(res.headers["content-type"]).toEqual('application/json');
+    expect(res.body[0].target.package_name).toEqual('net.artsy.app');
+    expect(res.body[0].target.namespace).toEqual('android_app');
+  });
 });
