@@ -1,6 +1,7 @@
 var path = require('path');
 var artsyEigenWebAssociation = require('artsy-eigen-web-association');
-var verificationFileName = path.resolve(__dirname, 'apple-developer-domain-association.txt');
+var iosVerificationFileName = path.resolve(__dirname, 'apple-developer-domain-association.txt');
+var androidVerificationFileName = path.resolve(__dirname, 'assetlinks.json');
 var options = { 'headers': { 'Content-Type': 'text/plain' } };
 
 var express = require('express');
@@ -11,7 +12,17 @@ app.use(morgan('combined'));
 app.use('/(.well-known/)?apple-app-site-association', artsyEigenWebAssociation);
 
 app.get('/.well-known/apple-developer-domain-association.txt', function (req, res) {
-  res.sendFile(verificationFileName, options, function (error) {
+  res.sendFile(iosVerificationFileName, options, function (error) {
+    if (error) {
+      console.log(error);
+      code = error.status >= 100 && error.status < 600 ? error.status : 500
+      response.status(code).end();
+    }
+  })
+})
+
+app.get('/.well-known/assetlinks.json', function (req, res) {
+  res.sendFile(androidVerificationFileName, options, function (error) {
     if (error) {
       console.log(error);
       code = error.status >= 100 && error.status < 600 ? error.status : 500
