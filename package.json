@@ -22,7 +22,7 @@
   "homepage": "https://github.com/artsy/artsy-wwwify",
   "dependencies": {
     "artsy-eigen-web-association": "git://github.com/artsy/artsy-eigen-web-association.git",
-    "morgan": "1.9.1"
+    "morgan": "1.10.0"
   },
   "devDependencies": {
     "jest": "24.9.0",
