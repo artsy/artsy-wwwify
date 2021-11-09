@@ -1,5 +1,5 @@
 var path = require('path');
-var artsyEigenWebAssociation = require('artsy-eigen-web-association');
+var artsyEigenWebAssociation = require('@artsy/eigen-web-association');
 var iosVerificationFileName = path.resolve(__dirname, 'apple-developer-domain-association.txt');
 var androidVerificationFileName = path.resolve(__dirname, 'assetlinks.json');
 
