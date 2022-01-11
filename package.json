@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/artsy/artsy-wwwify",
   "dependencies": {
-    "@artsy/eigen-web-association": "git://github.com/artsy/artsy-eigen-web-association.git",
+    "@artsy/eigen-web-association": "^1.2.1",
     "morgan": "1.10.0"
   },
   "devDependencies": {
