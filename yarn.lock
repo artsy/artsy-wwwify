@@ -2,9 +2,10 @@
 # yarn lockfile v1
 
 
-"@artsy/eigen-web-association@git://github.com/artsy/artsy-eigen-web-association.git":
+"@artsy/eigen-web-association@1.2.1":
   version "1.2.1"
-  resolved "git://github.com/artsy/artsy-eigen-web-association.git#0589e3d9da9b904a51d4b8c9c39cd8a585428493"
+  resolved "https://registry.yarnpkg.com/@artsy/eigen-web-association/-/eigen-web-association-1.2.1.tgz#8b286b8fe15384dd53ad85dd90b7c7acf660115b"
+  integrity sha512-o9IWTgo595yKPDLCv3t7MqVsXgx1nLEnFjdBPZjZp2XgzQG7oJrLhi8EImn5rmjth/cR+3KOqgia5pTMQqCdWQ==
   dependencies:
     express "^4.15.0"
 
