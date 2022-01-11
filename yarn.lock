@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@artsy/eigen-web-association@^1.2.1":
+"@artsy/eigen-web-association@1.2.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@artsy/eigen-web-association/-/eigen-web-association-1.2.1.tgz#8b286b8fe15384dd53ad85dd90b7c7acf660115b"
   integrity sha512-o9IWTgo595yKPDLCv3t7MqVsXgx1nLEnFjdBPZjZp2XgzQG7oJrLhi8EImn5rmjth/cR+3KOqgia5pTMQqCdWQ==
