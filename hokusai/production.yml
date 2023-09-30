@@ -131,13 +131,17 @@ spec:
       - path: /
         pathType: Prefix
         backend:
-          serviceName: artsy-wwwify-web-internal
-          servicePort: http
+          service:
+            name: artsy-wwwify-web-internal
+            port:
+              name: http
   - host: ascii.artsy.net
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
-          serviceName: artsy-wwwify-web-internal
-          servicePort: http
+          service:
+            name: artsy-wwwify-web-internal
+            port:
+              name: http
