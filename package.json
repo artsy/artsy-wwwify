@@ -1,6 +1,6 @@
 {
   "name": "artsy-wwwify",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "engines": {
     "node": "20"
   },
@@ -21,7 +21,6 @@
   },
   "homepage": "https://github.com/artsy/artsy-wwwify",
   "dependencies": {
-    "@artsy/eigen-web-association": "1.6.0",
     "morgan": "1.10.0"
   },
   "devDependencies": {
