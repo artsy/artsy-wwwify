@@ -1,4 +1,4 @@
-FROM node:12.18.4-alpine
+FROM node:20.9.0-alpine
 
 # Set up dumb-init
 RUN apk --no-cache --quiet add \
