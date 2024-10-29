@@ -1,8 +1,8 @@
 {
   "name": "artsy-wwwify",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "engines": {
-    "node": "12"
+    "node": "20"
   },
   "description": "A tiny app that 301 redirects requests to www.artsy.net",
   "main": "server.js",
@@ -21,11 +21,11 @@
   },
   "homepage": "https://github.com/artsy/artsy-wwwify",
   "dependencies": {
-    "@artsy/eigen-web-association": "1.6.0",
+    "express": "^4.21.1",
     "morgan": "1.10.0"
   },
   "devDependencies": {
-    "jest": "24.9.0",
+    "jest": "29.7.0",
     "supertest": "4.0.2"
   },
   "jest": {
