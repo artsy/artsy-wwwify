@@ -4,7 +4,7 @@ A tiny app that 301 redirects requests to www.artsy.net
 
 ### Meta
 
-- State: production
+- State: **retired**
 - Production: https://artsy.net
 - Staging: N/A
 - GitHub: https://github.com/artsy/artsy-wwwify
